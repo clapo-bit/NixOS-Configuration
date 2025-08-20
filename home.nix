@@ -36,6 +36,7 @@
   fastfetch
   tree
   home-manager
+  alacritty
   ];
 
  
