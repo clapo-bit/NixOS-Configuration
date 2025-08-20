@@ -18,7 +18,7 @@
         cd ~/nixos
 	if ! git diff-index --quiet HEAD; then
 	  git add .
-	  git commit -m \"NixOS config $(date + %d-%m-%Y_%H-%M-%S)\"
+	  git commit -m \"NixOS config $(date + \"%d-%m-%Y_%H-%M-%S\")\"
 	  git push origin main
 	else
 	  echo \"No changes to commit\"
