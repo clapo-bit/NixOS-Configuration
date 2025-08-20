@@ -16,7 +16,7 @@
       # Github backup alias
       alias nixbackup='
         cd ~/nixos
-	if ! git diff-index --quiet HEAD--; then
+	if ! git diff-index --quiet HEAD; then
 	  git add .
 	  git commit -m \"NixOS config $(date + %d-%m-%Y_%H-%M-%S)\"
 	  git push origin main
