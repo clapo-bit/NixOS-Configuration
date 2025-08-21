@@ -7,6 +7,12 @@
   home.stateVersion = "23.05";
   home.homeDirectory = "/home/jamal";
  
+  #Set defualt text editor
+  home.sessionVariables= {
+    EDITOR = "${pkgs.neovim}/bin/nvim";
+    VISUAL = "${pkgs.neovim}/bin/nvim";
+  };
+
    
   # Zsh and User commands for NixOS
   programs.zsh = {
@@ -72,7 +78,8 @@
   };
   # Import configuration files to user directory
   xdg.configFile = {
-    "hypr".source    = ./configs/hypr;
+    "hypr".source = ./configs/hypr;
+    "yazi".source = ./configs/yazi;
   };
  
 
