@@ -1,7 +1,13 @@
 {pkgs, ... }:
 {
 
- 
+  #GDK scaling
+  home.sessionVariables = {
+    GDK_SCALE = "1";
+    GDK_DPI_SCALE = "1";
+    QT_QPA_PLATFORM = "xcb";
+    ELECTRON_FORCE_DEVICE_SCALE_FACTOR = "1";
+  };
   #Home manager core details
   home.username = "jamal";
   home.stateVersion = "23.05";
@@ -61,6 +67,7 @@
     imagemagick
     wl-clipboard
     nerd-fonts.jetbrains-mono
+    rclone
 
 
   ];
