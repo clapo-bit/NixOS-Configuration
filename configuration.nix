@@ -66,9 +66,7 @@
     packages = with pkgs; [
     	neovim
     	firefox
-    	yazi
     	wl-clipboard
-    	nautilus
     ];
   };
 

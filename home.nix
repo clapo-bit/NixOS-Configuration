@@ -1,12 +1,14 @@
 {pkgs, ... }:
 {
  
- #Home manager core details
- home.username = "jamal";
- home.stateVersion = "23.05";
- home.homeDirectory = "/home/jamal";
+  #Home manager core details
+  home.username = "jamal";
+  home.stateVersion = "23.05";
+  home.homeDirectory = "/home/jamal";
 
- programs.zsh = {
+   
+  # Zsh and User commands for NixOS
+  programs.zsh = {
     enable = true;
     initContent = "
       # Rebuild system
@@ -16,31 +18,37 @@
       # Github backup alias
       alias nixbackup='
         cd ~/nixos
-	if ! git diff-index --quiet HEAD; then
+        if ! git diff-index --quiet HEAD; then
 	  git add .
 	  git commit -m \"NixOS config $(date \"+%d-%m-%Y_%H-%M-%S\")\"
 	  git push origin main
 	else
 	  echo \"No changes to commit\"
 	fi'
+    ";
+ };
+ 
+  # Home Packages
+  home.packages = with pkgs; [
+    neovim
+    firefox
+    yazi
+    fastfetch
+    tree
+    home-manager
+    alacritty
+  ];
 
-      ";
+  # Import configuration files to user directory
+  xdg.configFile = {
+    "hypr".source    = ./configs/hypr;
   };
  
 
- home.packages = with pkgs; [
-  neovim
-  firefox
-  nautilus
-  yazi
-  fastfetch
-  tree
-  home-manager
-  alacritty
-  ];
-
+  # Enable/Configure programs declaritavely
+  programs.yazi.enable = true;
  
- programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
  
- programs.htop.enable = true;
+  programs.htop.enable = true;
 }
