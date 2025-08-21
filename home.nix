@@ -35,13 +35,27 @@
   home.packages = with pkgs; [
     neovim
     firefox
-    yazi
+    (yazi.override {
+      _7zz = _7zz-rar;
+    })
     fastfetch
     tree
     home-manager
     alacritty
     kitty
     obsidian
+    ffmpeg_6
+    jq
+    poppler
+    fd
+    ripgrep
+    fzf
+    zoxide
+    resvg
+    imagemagick
+    wl-clipboard
+
+
   ];
 
   # Import configuration files to user directory
@@ -51,7 +65,6 @@
  
 
   # Enable/Configure programs declaritavely
-  programs.yazi.enable = true;
  
   programs.home-manager.enable = true;
  
