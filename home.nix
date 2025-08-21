@@ -1,11 +1,12 @@
 {pkgs, ... }:
 {
+
  
   #Home manager core details
   home.username = "jamal";
   home.stateVersion = "23.05";
   home.homeDirectory = "/home/jamal";
-
+ 
    
   # Zsh and User commands for NixOS
   programs.zsh = {
@@ -13,8 +14,10 @@
     initContent = "
       # Rebuild system
       alias nixsys='sudo nixos-rebuild switch --flake path:$HOME/nixos --impure'
+
       # Clean builds to last 3
-      alias nixcl3='sudo nix-env --delete-generations +3 && sudo nix-collect-garbage -d' 
+      alias nixcl3='sudo nix-env --delete-generations +3 && sudo nix-collect-garbage -d'
+
       # Github backup alias
       alias nixbackup='
         cd ~/nixos
@@ -37,6 +40,8 @@
     tree
     home-manager
     alacritty
+    kitty
+    obsidian
   ];
 
   # Import configuration files to user directory

@@ -63,11 +63,8 @@
     description = "Jamal Siddique";
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.zsh;
-    packages = with pkgs; [
-    	neovim
-    	firefox
-    	wl-clipboard
-    ];
+    home = "/home/jamal";
+    
   };
 
   # Allow unfree packages
