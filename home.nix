@@ -54,10 +54,22 @@
     resvg
     imagemagick
     wl-clipboard
+    nerd-fonts.jetbrains-mono
 
 
   ];
-
+  
+  # Nerd font
+  fonts = {
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace  = [ "JetBrainsMono Nerd Font" ];
+        sansSerif  = [ "JetBrainsMono Nerd Font" ];
+        serif      = [ "JetBrainsMono Nerd Font" ];
+      };
+    };
+  };
   # Import configuration files to user directory
   xdg.configFile = {
     "hypr".source    = ./configs/hypr;
