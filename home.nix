@@ -68,6 +68,10 @@
     wl-clipboard
     nerd-fonts.jetbrains-mono
     rclone
+    hyprpaper
+    swaybg
+    hydrapaper
+
 
 
   ];
