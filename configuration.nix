@@ -94,6 +94,10 @@
 	sddm = {
 		enable = true;
 		wayland.enable = true;
+		autoLogin = {
+		  enable = true;
+		  user = "jamal";
+		};
 	};
 	defaultSession = "hyprland";
   };
