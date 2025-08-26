@@ -88,18 +88,20 @@
 
   # Enable Zsh
   programs.zsh.enable = true;
+  
+  
 
-  # Enable sddm
+  # Manage DM
   services.displayManager = {
-	sddm = {
+	ly = {
 		enable = true;
-		wayland.enable = true;
-		autoLogin = {
-		  enable = true;
-		  user = "jamal";
-		};
 	};
 	defaultSession = "hyprland";
+  };
+  
+  boot = {
+    kernelModules = ["psmouse"];
+    kernelParams  = ["psmouse.proto=imps"];
   };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
