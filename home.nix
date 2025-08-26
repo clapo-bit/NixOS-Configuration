@@ -40,8 +40,11 @@
 	else
 	  echo \"No changes to commit\"
 	fi'
+      
+      alias sync='/home/jamal/nixos/scripts/bisync-kitty.sh'
+ 
     ";
- };
+  };
  
   # Home Packages
   home.packages = with pkgs; [
@@ -91,6 +94,7 @@
   xdg.configFile = {
     "hypr".source = ./configs/hypr;
     "yazi".source = ./configs/yazi;
+    "kitty".source = ./configs/kitty;
   };
  
 
