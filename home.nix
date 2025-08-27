@@ -1,4 +1,4 @@
-{pkgs, stylix, ... }:
+{config, pkgs, ... }:
 {
   #GDK scaling
   home.sessionVariables = {
