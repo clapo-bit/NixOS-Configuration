@@ -77,7 +77,6 @@
     hyprpaper
     swaybg
     hydrapaper
-    vimPlugins.nvchad
 
 
 
