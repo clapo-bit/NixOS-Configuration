@@ -89,7 +89,6 @@
   # Enable Zsh
   programs.zsh.enable = true;
   
-  
 
   # Manage DM
   services.displayManager = {
@@ -103,7 +102,7 @@
     kernelModules = ["psmouse"];
     kernelParams  = ["psmouse.proto=imps"];
   };
-
+ 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Some programs need SUID wrappers, can be configured further or are

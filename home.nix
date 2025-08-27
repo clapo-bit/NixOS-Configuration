@@ -1,6 +1,5 @@
-{pkgs, ... }:
+{pkgs, stylix, ... }:
 {
-
   #GDK scaling
   home.sessionVariables = {
     GDK_SCALE = "1";
@@ -19,7 +18,11 @@
     VISUAL = "${pkgs.neovim}/bin/nvim";
   };
 
-   
+  # Neovim
+  programs.neovim = {
+    enable = true;
+  };
+
   # Zsh and User commands for NixOS
   programs.zsh = {
     enable = true;
@@ -48,12 +51,12 @@
  
   # Home Packages
   home.packages = with pkgs; [
-    neovim
     firefox
     (yazi.override {
       _7zz = _7zz-rar;
     })
     fastfetch
+    vimPlugins.tokyonight-nvim
     tree
     home-manager
     alacritty
@@ -74,6 +77,7 @@
     hyprpaper
     swaybg
     hydrapaper
+    vimPlugins.nvchad
 
 
 
@@ -95,12 +99,13 @@
     "hypr".source = ./configs/hypr;
     "yazi".source = ./configs/yazi;
     "kitty".source = ./configs/kitty;
+    # "nvim".source = ./configs/nvim;
   };
  
 
   # Enable/Configure programs declaritavely
  
   programs.home-manager.enable = true;
- 
+   
   programs.htop.enable = true;
 }
