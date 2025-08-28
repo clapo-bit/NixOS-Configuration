@@ -8,10 +8,11 @@
     ELECTRON_FORCE_DEVICE_SCALE_FACTOR = "1";
   };
   #Home manager core details
-  home.username = "jamal";
-  home.stateVersion = "23.05";
-  home.homeDirectory = "/home/jamal";
- 
+  home = {
+    username = "jamal";
+    stateVersion = "23.05";
+    homeDirectory = "/home/jamal";
+  }; 
   #Set defualt text editor
   home.sessionVariables= {
     EDITOR = "${pkgs.neovim}/bin/nvim";
