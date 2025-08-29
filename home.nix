@@ -1,33 +1,15 @@
 {config, pkgs,  ... }:
 {
- 
- # NVF
-  programs.nvf = {
-    enable = true;
-    settings = {
-      vim = {
-        theme = {
-          enable = true;
-          name = "catppuccin";
-          style = "mocha";
-        };
-      
-        statusline.lualine.enable = true;
-        telescope.enable = true;
-        autocomplete.nvim-cmp.enable = true;
+  
+  # Imports
+  imports = [
+    ./configs/kitty/kitty.nix 
+    ./configs/neovim/neovim-config.nix
+  ];
 
-        languages = {
-          enableLSP = true;
-          enableTreesitter = true;
 
-          nix.enable = true;
-          ts.enable = true;
-          rust.enable = true;
-        };
-      };
-    };
-  };
- 
+
+
   #GDK scaling
   home.sessionVariables = {
     GDK_SCALE = "1";
@@ -123,7 +105,7 @@
   xdg.configFile = {
     "hypr".source = ./configs/hypr;
     "yazi".source = ./configs/yazi;
-    "kitty".source = ./configs/kitty;
+    #"kitty".source = ./configs/kitty;
   };
  
 
