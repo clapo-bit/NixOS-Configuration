@@ -4,7 +4,7 @@
   # NVF
   programs.nvf = {
     enable = true;
-                
+                    
     settings = {
       vim = {
         theme = {
@@ -23,7 +23,6 @@
           nix.enable = true;
           ts.enable = true;
           rust.enable = true;
-        
         };
 
         lsp.enable = true;
@@ -33,7 +32,6 @@
           shiftwidth = 2;
           expandtab = true;
           smartindent = true;
-
         };
       };
     };

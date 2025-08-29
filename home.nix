@@ -7,8 +7,11 @@
     ./configs/neovim/neovim-config.nix
   ];
 
-
-
+  xdg.configFile = {
+    "hypr".source = ./configs/hypr;
+    "yazi".source = ./configs/yazi;
+    "fastfetch".source = ./configs/fastfetch;
+  };
 
   #GDK scaling
   home.sessionVariables = {
@@ -59,12 +62,14 @@
  
   # Home Packages
   home.packages = with pkgs; [
+    waybar
     firefox
     (yazi.override {
       _7zz = _7zz-rar;
     })
-    fastfetch
     tree
+    neofetch
+    fastfetch
     home-manager
     alacritty
     kitty
@@ -101,14 +106,7 @@
       };
     };
   };
-  # Import configuration files to user directory
-  xdg.configFile = {
-    "hypr".source = ./configs/hypr;
-    "yazi".source = ./configs/yazi;
-    #"kitty".source = ./configs/kitty;
-  };
- 
-
+  # Import configuration files to user homeDirectory
   # Enable/Configure programs declaritavely
  
   programs.home-manager.enable = true;
