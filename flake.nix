@@ -7,23 +7,35 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
-    stylix.url = "github:nix-community/stylix";
-    stylix.inputs.nixpkgs.follows = "nixpkgs";
+    catppuccin.url = "github:catppuccin/nix";
+
   };
 
-  outputs = { self, nixpkgs,home-manager, nvf, stylix, ... }: {
+  outputs = { self, nixpkgs, home-manager, nvf, catppuccin, ... }: {
+
+    packages."x86_64-linux".default =
+      (nvf.lib.neovimConfiguration {
+        pkgs = nixpkgs.legacyPackages."x86_64-linux";
+	modules = [ ./configs/nvf/nvf-config.nix ];
+      }).neovim;
+
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 	modules = [
 	  ./configuration.nix
+	  catppuccin.nixosModules.catppuccin
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
-	    home-manager.users.jamal = ./home.nix;
+	    home-manager.users.jamal = {
+              imports = [
+	        ./home.nix
+		catppuccin.homeModules.catppuccin
+	      ];
+	    };
 	  }
-	  stylix.nixosModules.stylix
 	  nvf.nixosModules.default 
 	];
       };

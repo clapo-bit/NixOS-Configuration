@@ -1,5 +1,7 @@
-{config, pkgs, ... }:
+{config, pkgs, catppuccin, ... }:
 {
+
+
   #GDK scaling
   home.sessionVariables = {
     GDK_SCALE = "1";
@@ -7,6 +9,7 @@
     QT_QPA_PLATFORM = "xcb";
     ELECTRON_FORCE_DEVICE_SCALE_FACTOR = "1";
   };
+
   #Home manager core details
   home = {
     username = "jamal";
@@ -17,11 +20,6 @@
   home.sessionVariables= {
     EDITOR = "${pkgs.neovim}/bin/nvim";
     VISUAL = "${pkgs.neovim}/bin/nvim";
-  };
-
-  # Neovim
-  programs.neovim = {
-    enable = true;
   };
 
   # Zsh and User commands for NixOS
@@ -57,7 +55,6 @@
       _7zz = _7zz-rar;
     })
     fastfetch
-    vimPlugins.tokyonight-nvim
     tree
     home-manager
     alacritty
@@ -99,7 +96,6 @@
     "hypr".source = ./configs/hypr;
     "yazi".source = ./configs/yazi;
     "kitty".source = ./configs/kitty;
-    # "nvim".source = ./configs/nvim;
   };
  
 

@@ -3,7 +3,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, nvf, stylix, ... }:
+{ config, pkgs, nvf, stylix, catppuccin, ... }:
 
 {
   imports =
@@ -11,11 +11,8 @@
       ./hardware-configuration.nix
     ];
   
-  # Stylix
-  stylix = {
-    enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
-  };
+  # Nvf 
+  programs.nvf.enable = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
