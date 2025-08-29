@@ -28,6 +28,13 @@
 
         lsp.enable = true;
 
+        options = {
+          tabstop = 2;
+          shiftwidth = 2;
+          expandtab = true;
+          smartindent = true;
+
+        };
       };
     };
   };
