@@ -1,7 +1,33 @@
-{config, pkgs, catppuccin, ... }:
+{config, pkgs,  ... }:
 {
+ 
+ # NVF
+  programs.nvf = {
+    enable = true;
+    settings = {
+      vim = {
+        theme = {
+          enable = true;
+          name = "catppuccin";
+          style = "mocha";
+        };
+      
+        statusline.lualine.enable = true;
+        telescope.enable = true;
+        autocomplete.nvim-cmp.enable = true;
 
+        languages = {
+          enableLSP = true;
+          enableTreesitter = true;
 
+          nix.enable = true;
+          ts.enable = true;
+          rust.enable = true;
+        };
+      };
+    };
+  };
+ 
   #GDK scaling
   home.sessionVariables = {
     GDK_SCALE = "1";
@@ -9,6 +35,7 @@
     QT_QPA_PLATFORM = "xcb";
     ELECTRON_FORCE_DEVICE_SCALE_FACTOR = "1";
   };
+  
 
   #Home manager core details
   home = {
@@ -18,7 +45,7 @@
   }; 
   #Set defualt text editor
   home.sessionVariables= {
-    EDITOR = "${pkgs.neovim}/bin/nvim";
+    EDITOR = "nvim";
     VISUAL = "${pkgs.neovim}/bin/nvim";
   };
 
@@ -62,6 +89,7 @@
     obsidian
     ffmpeg_6
     jq
+    neovim
     poppler
     fd
     ripgrep

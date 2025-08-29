@@ -13,12 +13,7 @@
 
   outputs = { self, nixpkgs, home-manager, nvf, catppuccin, ... }: {
 
-    packages."x86_64-linux".default =
-      (nvf.lib.neovimConfiguration {
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-	modules = [ ./configs/nvf/nvf-config.nix ];
-      }).neovim;
-
+   
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
@@ -33,6 +28,7 @@
               imports = [
 	        ./home.nix
 		catppuccin.homeModules.catppuccin
+		nvf.homeManagerModules.default
 	      ];
 	    };
 	  }
