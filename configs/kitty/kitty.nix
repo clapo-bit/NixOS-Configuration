@@ -4,7 +4,7 @@
 
   programs.kitty = {
     enable = true;
-    themeFile = "Catppuccin-Mocha";
+    themeFile = "Catppuccin-Macchiato";
     settings = {
       allow_remote_control = "yes";
       confirm_os_window_close = "0";

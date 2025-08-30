@@ -11,8 +11,6 @@
       ./hardware-configuration.nix
     ];
   
- catppuccin.enable = true;
-  catppuccin.flavor = "macchiato";
 
   
   # Bootloader.

@@ -68,6 +68,7 @@
       _7zz = _7zz-rar;
     })
     tree
+    pywal16
     neofetch
     fastfetch
     home-manager
