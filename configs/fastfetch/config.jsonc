@@ -4,7 +4,7 @@
     "type": "auto",
     "source": "~/nixos/configs/fastfetch/ascii-art/skull.txt",
     "color": {
-      "1": "",
+      "1": "#91d7e3",
       "2": "",
       "3": "",
       "4": "",
