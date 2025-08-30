@@ -62,7 +62,6 @@
  
   # Home Packages
   home.packages = with pkgs; [
-    waybar
     neomutt
     firefox
     vesktop
@@ -70,11 +69,8 @@
       _7zz = _7zz-rar;
     })
     tree
-    pywal16
-    neofetch
     fastfetch
     home-manager
-    alacritty
     kitty
     obsidian
     ffmpeg_6
