@@ -13,6 +13,7 @@
     settings = {
       vim = {
               
+        clipboard.providers.wl-copy.package = pkgs.wl-clipboard;
         statusline.lualine.enable = true;
         telescope.enable = true;
         autocomplete.nvim-cmp.enable = true;

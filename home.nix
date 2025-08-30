@@ -63,7 +63,9 @@
   # Home Packages
   home.packages = with pkgs; [
     waybar
+    neomutt
     firefox
+    vesktop
     (yazi.override {
       _7zz = _7zz-rar;
     })
