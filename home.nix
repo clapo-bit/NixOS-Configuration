@@ -1,18 +1,22 @@
-{config, pkgs,  ... }:
+{ config, pkgs,  ... }:
 {
   
   # Imports
   imports = [
-    ./configs/kitty/kitty.nix 
-    ./configs/neovim/neovim-config.nix
+    ./home/configs/kitty/kitty.nix 
+    ./home/configs/neovim/neovim.nix
+    ./home/configs/zsh/zsh.nix
+    ./home/user.nix
+    ./home/fonts.nix
+    ./home/packages.nix
   ];
 
   xdg.configFile = {
-    "hypr".source = ./configs/hypr;
-    "yazi".source = ./configs/yazi;
-    "fastfetch".source = ./configs/fastfetch;
-    "waypaper".source = ./configs/waypaper;
-    "rofi".source = ./configs/rofi;
+    "hypr".source = ./home/configs/hypr;
+    "yazi".source = ./home/configs/yazi;
+    "fastfetch".source = ./home/configs/fastfetch;
+    "waypaper".source = ./home/configs/waypaper;
+    "rofi".source = ./home/configs/rofi;
   };
 
   #GDK scaling
@@ -33,92 +37,15 @@
       };
     };
   };
-  #Home manager core details
-  home = {
-    username = "jamal";
-    stateVersion = "23.05";
-    homeDirectory = "/home/jamal";
-  }; 
+
   #Set defualt text editor
   home.sessionVariables= {
     EDITOR = "nvim";
     VISUAL = "${pkgs.neovim}/bin/nvim";
   };
 
-  # Zsh and User commands for NixOS
-  programs.zsh = {
-    enable = true;
-    initContent = "
-      # Rebuild system
-      alias nixsys='sudo nixos-rebuild switch --flake path:$HOME/nixos --impure'
-
-      # Clean builds to last 3
-      alias nixcl3='sudo nix-env --delete-generations +3 && sudo nix-collect-garbage -d'
-
-      # Github backup alias
-      alias nixbackup='
-        cd ~/nixos
-        if ! git diff-index --quiet HEAD; then
-	  git add .
-	  git commit -m \"NixOS config $(date \"+%d-%m-%Y_%H-%M-%S\")\"
-	  git push origin main
-	else
-	  echo \"No changes to commit\"
-	fi'
-      
-      alias sync='/home/jamal/nixos/scripts/bisync-kitty.sh'
- 
-    ";
-  };
- 
-  # Home Packages
-  home.packages = with pkgs; [
-    neomutt
-    swww
-    waypaper
-    firefox
-    vesktop
-    (yazi.override {
-      _7zz = _7zz-rar;
-    })
-    tree
-    fastfetch
-    home-manager
-    kitty
-    obsidian
-    ffmpeg_6
-    jq
-    neovim
-    poppler
-    fd
-    ripgrep
-    fzf
-    zoxide
-    resvg
-    imagemagick
-    wl-clipboard
-    nerd-fonts.jetbrains-mono
-    rclone
-    hyprpaper
-    swaybg
-    hydrapaper
-
-
-
-  ];
   
-  # Nerd font
-  fonts = {
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-        monospace  = [ "JetBrainsMono Nerd Font" ];
-        sansSerif  = [ "JetBrainsMono Nerd Font" ];
-        serif      = [ "JetBrainsMono Nerd Font" ];
-      };
-    };
-  };
-  # Import configuration files to user homeDirectory
+   # Import configuration files to user homeDirectory
   # Enable/Configure programs declaritavely
  
   programs.home-manager.enable = true;
