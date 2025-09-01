@@ -11,6 +11,8 @@
     "hypr".source = ./configs/hypr;
     "yazi".source = ./configs/yazi;
     "fastfetch".source = ./configs/fastfetch;
+    "waypaper".source = ./configs/waypaper;
+    "rofi".source = ./configs/rofi;
   };
 
   #GDK scaling
@@ -21,7 +23,16 @@
     ELECTRON_FORCE_DEVICE_SCALE_FACTOR = "1";
   };
   
-
+  #GTK theming
+  gtk = {
+    gtk3 = {
+      enable = true;
+      theme = {
+        package = pkgs.magnetic-catppuccin-gtk;
+        name = "gtk-Dark.scss";
+      };
+    };
+  };
   #Home manager core details
   home = {
     username = "jamal";
@@ -63,6 +74,8 @@
   # Home Packages
   home.packages = with pkgs; [
     neomutt
+    swww
+    waypaper
     firefox
     vesktop
     (yazi.override {

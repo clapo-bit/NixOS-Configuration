@@ -74,12 +74,13 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-	hyprland
-	kitty
-	rofi
-	git
-	openssh
-	zsh
+    hyprland
+    kitty
+    magnetic-catppuccin-gtk
+    rofi
+    git
+    openssh
+    zsh
   #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
   #  wget
   ];
