@@ -11,7 +11,7 @@
 
   };
 
-  outputs = { self, nixpkgs, home-manager, nvf, catppuccin, ... }: {
+  outputs = { nixpkgs, home-manager, nvf, catppuccin, ... }: {
 
    
     nixosConfigurations = {
