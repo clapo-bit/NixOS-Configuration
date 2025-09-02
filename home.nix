@@ -37,7 +37,8 @@
       };
     };
   };
-
+  
+ 
   #Set defualt text editor
   home.sessionVariables= {
     EDITOR = "nvim";
