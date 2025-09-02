@@ -4,6 +4,11 @@
   # Home Packages
   home.packages = with pkgs; [
     neomutt
+    brightnessctl
+    wev
+    wlsunset
+    mullvad-vpn
+    intel-media-driver
     swww
     waypaper
     firefox
