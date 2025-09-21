@@ -6,6 +6,7 @@
     ./home/configs/kitty/kitty.nix 
     ./home/configs/neovim/neovim.nix
     ./home/configs/zsh/zsh.nix
+    ./home/configs/neomutt/neomutt.nix
     ./home/user.nix
     ./home/fonts.nix
     ./home/packages.nix
@@ -13,6 +14,7 @@
 
   xdg.configFile = {
     "hypr".source = ./home/configs/hypr;
+    "himalaya".source = ./home/configs/himalaya;
     "yazi".source = ./home/configs/yazi;
     "fastfetch".source = ./home/configs/fastfetch;
     "waypaper".source = ./home/configs/waypaper;

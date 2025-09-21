@@ -3,7 +3,11 @@
 {
   # Home Packages
   home.packages = with pkgs; [
-    neomutt
+    geteduroam
+    wget
+    networkmanagerapplet
+    himalaya
+    teams-for-linux
     brightnessctl
     wev
     wlsunset

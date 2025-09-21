@@ -1,2 +1,2 @@
-kitty @ launch --type=window --title BISYNC rclone bisync gdrive:impossible-landscapes ~/obsidian-vault -v
+kitty @ launch --type=window --title BISYNC rclone bisync gdrive:university-work ~/obsidian-vault -v
 
