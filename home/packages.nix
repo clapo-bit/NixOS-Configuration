@@ -3,7 +3,8 @@
 {
   # Home Packages
   home.packages = with pkgs; [
-    geteduroam
+    dconf
+    waybar
     wget
     networkmanagerapplet
     himalaya

@@ -11,7 +11,12 @@
       ./hardware-configuration.nix
     ];
 
-  
+ 
+  security.pki.certificateFiles = [
+    ./certs/uob-net-ca.pem
+  ];
+
+ 
 
   services.logind.settings.Login = {
     HandleLidSwitch = "suspend";       # suspend when lid is closed

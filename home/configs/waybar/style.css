@@ -1,0 +1,11 @@
+* {
+    background: transparent;
+    color: white;
+    font-family: "JetBrains Mono";
+    font-size: 12px;
+}
+
+#clock, #battery {
+    padding: 0 10px;
+}
+

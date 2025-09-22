@@ -14,6 +14,7 @@
 
   xdg.configFile = {
     "hypr".source = ./home/configs/hypr;
+    "waybar".source = ./home/configs/waybar;
     "himalaya".source = ./home/configs/himalaya;
     "yazi".source = ./home/configs/yazi;
     "fastfetch".source = ./home/configs/fastfetch;
