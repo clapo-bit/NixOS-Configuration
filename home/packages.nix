@@ -4,7 +4,9 @@
   # Home Packages
   home.packages = with pkgs; [
     dconf
-    waybar
+    zathura
+    shutter
+    bitwarden-desktop
     wget
     networkmanagerapplet
     himalaya

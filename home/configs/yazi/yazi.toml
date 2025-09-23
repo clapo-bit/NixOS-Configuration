@@ -34,6 +34,10 @@
     { run = 'code %*',    orphan = true, desc = "code",           for = "windows" },
     { run = 'code -w %*', block = true,  desc = "code (block)",   for = "windows" },
   ]
+  pdf = [  
+    { run = 'zathura "$@"', desc = "Open with Zathura", orphan = true, block = false, for = "unix" }
+  ]
+
   open = [
     { run = 'xdg-open "$1"',                desc = "Open", for = "linux" },
     { run = 'open "$@"',                    desc = "Open", for = "macos" },
@@ -59,6 +63,8 @@
 
   [open]
   rules = [
+    # Pdf
+    { mime = "application/pdf", use = ["zathura_pdf"] },
     # Folder
     { name = "*/", use = [ "edit", "open", "reveal" ] },
     # Text
