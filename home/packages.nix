@@ -4,8 +4,11 @@
   # Home Packages
   home.packages = with pkgs; [
     dconf
+    libreoffice-qt-fresh
     zathura
     shutter
+    spotify
+    spotify-player
     bitwarden-desktop
     wget
     networkmanagerapplet
